@@ -16,7 +16,19 @@ public class StudentAdmissionController {
 
 		return model;
 	}
+	
+	
+	@RequestMapping(value="/submitAdmissionForm.html", method = RequestMethod.POST)
+	public ModelAndView submitAdmissionForm(@ModelAttribute("student1") Student student1)  {
+		
 
+		ModelAndView model = new ModelAndView("AdmissionSuccess");   // "AdmissionSuccess" is the View Nam
+		model.addObject("headerMessage","Gontu College of Engineering, India");
+		
+		return model;
+	}
+	
+/*
 	@RequestMapping(value="/submitAdmissionForm.html", method = RequestMethod.POST)
 	public ModelAndView submitAdmissionForm(@ModelAttribute("studentName") String name,
 											@ModelAttribute("studentHobby") String hobby) {
@@ -31,6 +43,6 @@ public class StudentAdmissionController {
 		
 		return model;
 	}
-	
+	*/
 }
 
