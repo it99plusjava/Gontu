@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+
+	<context:component-scan base-package="com.gontu" />
+	<mvc:annotation-driven />
+
+
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+
+	<!-- Section I -->
+	<!-- tells the front controller which handler mapping to use. Its job is just to scan the input url and -->
+	<!-- tell the front controller (DispatchServlet) which class to call in order for further processing that request -->
+	<!-- <bean id="HandlerMapping"	class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" /> -->
+
+	<!-- Sectiion II -->
+	<!-- This section is the controller class -->
+	<!-- <bean name="/welcome.html" class="com.gontu.HelloController" /> -->
+
+	<!-- Sectiion III -->
+	<!-- tells the front controller which view to use.  Its job is just to tell the exact location  -->
+	<!-- of the view present in the project -->
+
+</beans>
